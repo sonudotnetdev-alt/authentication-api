@@ -109,7 +109,7 @@ namespace Authentication_Api.Controllers
             return Ok(user);
         }
 
-        [Authorize]
+        [Authorize(Roles ="Admin")]
         [HttpPut("update-user-address")]
         public async Task<IActionResult> UpdateUserAddress(AddressDto dto)
         {

@@ -187,5 +187,13 @@ app.UseAuthorization();
 
 app.MapControllers();
 app.UseRateLimiter();
-InfrastructureRegistration.infrastructureConfigMiddleware(app);
+try
+{
+    InfrastructureRegistration.infrastructureConfigMiddleware(app);
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+
 app.Run();
